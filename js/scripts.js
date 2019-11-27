@@ -1,5 +1,5 @@
 String.prototype.toCapitalizeCase = function() {
-	return this.replace(/(?:^|\s)\S/g, function(a) {
+	return this.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
 		return a.toUpperCase();
 	});
 };
