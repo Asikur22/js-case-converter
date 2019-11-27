@@ -4,7 +4,7 @@ String.prototype.toCapitalizeCase = function() {
 	});
 };
 
-function fadeOut(el) {
+function fadeOut(el, el2) {
 	el.style.opacity = 1;
 
 	(function fade() {
@@ -13,6 +13,8 @@ function fadeOut(el) {
 		} else {
 			requestAnimationFrame(fade);
 		}
+
+		el2 && el2.focus();
 	})();
 }
 
@@ -68,8 +70,11 @@ document.addEventListener("DOMContentLoaded", function() {
 				fadeIn(document.getElementById("alert"));
 
 				setTimeout(function() {
-					fadeOut(document.getElementById("alert"));
-				}, 2000);
+					fadeOut(
+						document.getElementById("alert"),
+						document.querySelector("#result textarea")
+					);
+				}, 3000);
 			}
 		},
 		false
@@ -88,6 +93,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		.addEventListener("click", function(event) {
 			event.preventDefault();
 
-			fadeOut(document.getElementById("alert"));
+			fadeOut(
+				document.getElementById("alert"),
+				document.querySelector("#result textarea")
+			);
 		});
 });
