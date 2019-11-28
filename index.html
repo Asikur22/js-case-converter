@@ -20,21 +20,23 @@
             <p>Convert Text to Uppercase, Lowercase & Capitalize.</p>
         </header>
         <div class="wrapper">
-            <div class="form-item">
-                <textarea id="textarea">The quick brown fox jumps over the lazy dog</textarea>
-            </div>
-            <div class="form-item">
-                <div class="select-box">
-                    <select id="select">
-                        <option value="capitalize">Capitalize</option>
-                        <option value="uppercase">Uppercase</option>
-                        <option value="lowercase">Lowercase</option>
-                    </select>
+            <form action="">
+                <div class="form-item">
+                    <textarea id="textarea">The quick brown fox jumps over the lazy dog</textarea>
                 </div>
-            </div>
-            <div class="form-item btn-group">
-                <button class="btn">Convert</button>
-            </div>
+                <div class="form-item">
+                    <div class="select-box">
+                        <select id="select">
+                            <option value="capitalize">Capitalize</option>
+                            <option value="uppercase">Uppercase</option>
+                            <option value="lowercase">Lowercase</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-item btn-group">
+                    <button id="btn-convert" class="btn">Convert</button>
+                </div>
+            </form>
             <div id="result"></div>
         </div>
         <div id="alert">
@@ -48,6 +50,7 @@
         </footer>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
 

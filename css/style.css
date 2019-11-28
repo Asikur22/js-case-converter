@@ -42,6 +42,10 @@ body {
 	margin-bottom: 50px;
 }
 
+.form-item {
+	position: relative;
+}
+
 textarea {
 	width: 100%;
 	display: block;
@@ -52,6 +56,15 @@ textarea {
 	text-align: left;
 	padding: 15px;
 	box-sizing: border-box;
+}
+
+#btn-clear {
+	position: absolute;
+	top: 0;
+	left: auto;
+	right: 0;
+	margin: 0;
+	padding: 10px 20px;
 }
 
 .select-box {
@@ -115,7 +128,7 @@ textarea {
 	margin: 15px 0;
 	display: inline-block;
 	cursor: pointer;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	font-size: 18px;
 }
 

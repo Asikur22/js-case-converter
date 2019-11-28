@@ -4,98 +4,78 @@ String.prototype.toCapitalizeCase = function() {
 	});
 };
 
-function fadeOut(el, el2) {
-	el.style.opacity = 1;
+jQuery(document).ready(function($) {
+	$("#btn-convert").on("click", function(event) {
+		event.preventDefault();
 
-	(function fade() {
-		if ((el.style.opacity -= 0.1) < 0) {
-			el.style.display = "none";
-		} else {
-			requestAnimationFrame(fade);
+		var text = $("#textarea").val();
+		var type = $("#select").val();
+
+		var newText = "";
+		switch (type) {
+			case "uppercase":
+				newText = text.toUpperCase();
+				break;
+			case "lowercase":
+				newText = text.toLowerCase();
+				break;
+			case "capitalize":
+				newText = text.toCapitalizeCase();
+				break;
 		}
 
-		el2 && el2.focus();
-	})();
-}
+		if (newText !== "") {
+			$("#result").html(
+				'<div class="form-item"><textarea class="form-control">' +
+					newText +
+					"</textarea></div>"
+			);
 
-function fadeIn(el, display) {
-	el.style.opacity = 0;
-	el.style.display = display || "block";
+			$(this)
+				.addClass("success")
+				.text("Text Converted");
 
-	(function fade() {
-		var val = parseFloat(el.style.opacity);
-		if (!((val += 0.1) > 1)) {
-			el.style.opacity = val;
-			requestAnimationFrame(fade);
+			$("#result textarea").select();
+			document.execCommand("copy");
+			$("#alert").fadeIn();
+
+			setTimeout(function() {
+				$("#alert").fadeOut("fast");
+				$("#result textarea").focus();
+			}, 3000);
 		}
-	})();
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-	document.querySelector(".btn").addEventListener(
-		"click",
-		function() {
-			var text = document.getElementById("textarea").value;
-			var type = document.querySelector("#select").value;
-
-			var newText = "";
-			switch (type) {
-				case "uppercase":
-					newText = text.toUpperCase();
-					break;
-				case "lowercase":
-					newText = text.toLowerCase();
-					break;
-				case "capitalize":
-					newText = text.toCapitalizeCase();
-					break;
-			}
-
-			if (newText !== "") {
-				var resultText = document.querySelector("#result textarea");
-				if (resultText) {
-					resultText.textContent = newText;
-				} else {
-					var element = document.createElement("textarea");
-					element.classList.add("form-control");
-					element.textContent = newText;
-					document.getElementById("result").appendChild(element);
-				}
-
-				this.classList.add("success");
-				this.textContent = "Converted";
-
-				document.querySelector("#result textarea").select();
-				document.execCommand("copy");
-				fadeIn(document.getElementById("alert"));
-
-				setTimeout(function() {
-					fadeOut(
-						document.getElementById("alert"),
-						document.querySelector("#result textarea")
-					);
-				}, 3000);
-			}
-		},
-		false
-	);
+	});
 
 	// Change Text
-	document.getElementById("select").addEventListener("change", function() {
-		var btn = document.querySelector(".btn");
-		btn.classList.remove("success");
-		btn.textContent = "Convert";
+	$("#select, #textarea").on("change", function() {
+		$("#btn-convert")
+			.removeClass("success")
+			.text("Convert");
+	});
+
+	// Show clear button
+	$(document).on("focus", "textarea", function() {
+		var button = $("<button/>", {
+			text: "Clear",
+			type: "button",
+			id: "btn-clear",
+			class: "btn",
+			click: function() {
+				$(this)
+					.siblings("textarea")
+					.val("")
+					.focus();
+			}
+		});
+
+		$(this).after(button);
 	});
 
 	// Close Alert
-	document
-		.getElementById("alert-close")
-		.addEventListener("click", function(event) {
-			event.preventDefault();
+	$("#alert-close").on("click", function(event) {
+		event.preventDefault();
 
-			fadeOut(
-				document.getElementById("alert"),
-				document.querySelector("#result textarea")
-			);
-		});
+		$("#alert").fadeOut("fast");
+		$("#result textarea").focus();
+	});
 });
