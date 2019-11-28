@@ -33,6 +33,10 @@ body {
 	border-top: 1px solid #ddd;
 }
 
+.page-footer i {
+	color: #d60505;
+}
+
 .wrapper {
 	padding: 40px 15px;
 	margin: 0 auto;
