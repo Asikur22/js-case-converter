@@ -107,7 +107,6 @@ textarea {
 	width: 200px;
 	border: none;
 	font-size: 20px;
-	/* box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2); */
 	-webkit-appearance: button;
 	appearance: button;
 	outline: none;
@@ -244,7 +243,7 @@ textarea {
 
 /* When the checkbox is checked, add a blue background */
 .checkboxes-container input:checked ~ .checkmark {
-	background-color: #2196f3;
+	background-color: #4caf50;
 }
 
 /* When the checkbox is disabled, add a gray background */
@@ -277,7 +276,7 @@ textarea {
 	top: 5px;
 	width: 5px;
 	height: 10px;
-	border: solid white;
+	border: solid #fff;
 	border-width: 0 3px 3px 0;
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
