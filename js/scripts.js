@@ -1,5 +1,6 @@
 String.prototype.toCapitalizeCase = function() {
 	return this.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
+		console.log(a);
 		return a.toUpperCase();
 	});
 };
@@ -33,12 +34,9 @@ jQuery(document).ready(function($) {
 		}
 
 		if ($("#checkbox").is(":checked")) {
-			console.log("Checked");
 			newText = newText
 				.replace(/(\r\n|\n|\r)/gm, " ")
 				.replace(/\s+/g, " ");
-		} else {
-			console.log("not checked");
 		}
 
 		if (newText !== "") {
