@@ -14,7 +14,10 @@ jQuery(document).ready(function($) {
 		var newText = "";
 		switch (type) {
 			case "uppercase":
-				newText = text.toUpperCase();
+				newText = $("<div/>")
+					.html(text)
+					.text()
+					.toUpperCase();
 				break;
 			case "lowercase":
 				newText = text.toLowerCase();
