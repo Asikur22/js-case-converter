@@ -2,57 +2,64 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Case Converter</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JS Case Converter</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="main">
-        <header class="page-header">
-            <h1>JS Case Converter</h1>
-            <p>Convert Text to Uppercase, Lowercase & Capitalize.</p>
-        </header>
-        <div class="wrapper">
-            <form action="">
-                <div class="form-item">
-                    <textarea id="textarea">The quick brown fox jumps over the lazy dog</textarea>
-                </div>
-                <div class="form-item">
-                    <div class="select-box">
-                        <select id="select">
-                            <option value="capitalize">Capitalize</option>
-                            <option value="uppercase">Uppercase</option>
-                            <option value="lowercase">Lowercase</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-item btn-group">
-                    <button id="btn-convert" class="btn">Convert</button>
-                </div>
-            </form>
-            <div id="result"></div>
-        </div>
-        <div id="alert">
-            Text Copied!
-            <a href="#" id="alert-close">
-                <i class="fa fa-times"></i>
-            </a>
-        </div>
-        <footer class="page-footer">
-            Thanks for visiting. Made with <i class="fa fa-heart"></i> by <a href="https://github.com/Asikur22"
-                target="_blank">Asique</a>
-        </footer>
-    </div>
+	<div class="main">
+		<header class="page-header">
+			<h1>JS Case Converter</h1>
+			<p>Convert Text to Uppercase, Lowercase & Capitalize.</p>
+		</header>
+		<div class="wrapper">
+			<form action="">
+				<div class="form-item">
+					<textarea id="textarea">The quick brown fox jumps over the lazy dog</textarea>
+				</div>
+				<div class="form-item">
+					<div class="select-box">
+						<select id="select">
+							<option value="capitalize">Capitalize</option>
+							<option value="uppercase">Uppercase</option>
+							<option value="lowercase">Lowercase</option>
+							<option value="normalize">Normalize</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-item btn-group">
+					<label class="checkboxes-container">
+						<input id="checkbox" type="checkbox" value="normalize">
+						<span class="checkboxes-text">Normalize</span>
+						<span class="checkmark"></span>
+					</label>
+				</div>
+				<div class="form-item btn-group">
+					<button id="btn-convert" class="btn">Convert</button>
+				</div>
+			</form>
+			<div id="result"></div>
+		</div>
+		<div id="alert">
+			Text Copied!
+			<a href="#" id="alert-close">
+				<i class="fa fa-times"></i>
+			</a>
+		</div>
+		<footer class="page-footer">
+			Thanks for visiting. Made with <i class="fa fa-heart"></i> by <a href="https://github.com/Asikur22" target="_blank">Asique</a>
+		</footer>
+	</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/scripts.js"></script>
 </body>
 
 </html>

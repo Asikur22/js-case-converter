@@ -22,6 +22,20 @@ jQuery(document).ready(function($) {
 			case "capitalize":
 				newText = text.toCapitalizeCase();
 				break;
+			case "normalize":
+				newText = text
+					.replace(/(\r\n|\n|\r)/gm, " ")
+					.replace(/\s+/g, " ");
+				break;
+		}
+
+		if ($("#checkbox").is(":checked")) {
+			console.log("Checked");
+			newText = newText
+				.replace(/(\r\n|\n|\r)/gm, " ")
+				.replace(/\s+/g, " ");
+		} else {
+			console.log("not checked");
 		}
 
 		if (newText !== "") {
@@ -47,7 +61,18 @@ jQuery(document).ready(function($) {
 	});
 
 	// Change Text
-	$("#select, #textarea").on("change", function() {
+	$("#select").on("change", function() {
+		if (this.value == "normalize") {
+			$("#checkbox")
+				.attr("checked", true)
+				.attr("disabled", true);
+		} else {
+			$("#checkbox").attr("disabled", false);
+		}
+	});
+
+	// Change Text
+	$("#select, #textarea, #checkbox").on("change", function() {
 		$("#btn-convert")
 			.removeClass("success")
 			.text("Convert");
