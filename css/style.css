@@ -50,6 +50,16 @@ body {
 	position: relative;
 }
 
+.input {
+	position: relative;
+}
+
+label {
+	display: block;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
 textarea {
 	width: 100%;
 	display: block;
