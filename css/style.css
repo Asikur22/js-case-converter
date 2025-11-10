@@ -117,10 +117,12 @@ textarea {
 	width: 200px;
 	border: none;
 	font-size: 20px;
-	-webkit-appearance: button;
-	appearance: button;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	outline: none;
 	border-radius: 4px;
+	cursor: pointer;
 }
 
 .select-box select option {

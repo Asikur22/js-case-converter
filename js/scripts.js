@@ -26,6 +26,14 @@ jQuery(document).ready(function($) {
 			case "capitalize":
 				newText = text.toCapitalizeCase();
 				break;
+			case "slugify":
+				newText = text
+					.toLowerCase()
+					.trim()
+					.replace(/[^\w\s-]/g, '')
+					.replace(/[\s_-]+/g, '-')
+					.replace(/^-+|-+$/g, '');
+				break;
 			case "normalize":
 				newText = text
 					.replace(/(\r\n|\n|\r)/gm, " ")
